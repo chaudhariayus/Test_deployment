@@ -14,17 +14,9 @@ const app = express();
 
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors({
-  origin: process.env.CLIENT_URL,
-  credentials: true
-}));
+app.use(cors());
 
-app.use((_, res, next) => {
-  res.header("Access-Control-Allow-Origin", process.env.CLIENT_URL);
-  res.header("Access-Control-Allow-Headers", "*");
-  res.header("Access-Control-Allow-Credentials", "true");
-  next();
-});
+
 
 app.use("/auth", authroutes);
 app.use("/profile", profileroutes);
