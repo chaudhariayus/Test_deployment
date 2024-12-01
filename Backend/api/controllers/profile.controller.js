@@ -2,10 +2,7 @@ import User from '../../data/models/user.model.js';
 import getErrorDetails from '../../Utilites/errorCodes.js';
 import PatientProfile from '../../data/models/profile/profile.patient.js';
 import DoctorProfile from '../../data/models/profile/profile.doctor.js';
-import path from 'path';
-const profilePath = path.resolve('data/models/profile/profile.labtechnician.js');
-import { LabTechnicianProfile } from profilePath;
-
+import LabTechnicianProfile from '../../data/models/profile/profile.labtech.js';
 import PharmacistProfile from '../../data/models/profile/profile.pharmacist.js';
 import { v2 as cloudinary } from 'cloudinary';
 

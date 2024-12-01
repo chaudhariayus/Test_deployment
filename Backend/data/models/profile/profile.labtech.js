@@ -19,5 +19,6 @@ const labTechnicianSchema = new Schema({
   createdAt: { type: Date, default: Date.now }
 }, { timestamps: true });
 
-export const LabTechnicianProfile = model("LabTechnicianProfile", labTechnicianSchema);
+const LabTechnicianProfile = model("LabTechnicianProfile", labTechnicianSchema);
+export default LabTechnicianProfile;
 
