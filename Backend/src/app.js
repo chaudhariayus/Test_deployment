@@ -12,11 +12,19 @@ import dotenv from 'dotenv';
 dotenv.config();
 const app = express(); 
 
+// CORS configuration to allow requests from localhost (frontend)
+const corsOptions = {
+  origin: ['http://localhost:5173', 'https://your-backend.onrender.com'], // allow both localhost and Render backend
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], // specify allowed methods
+  allowedHeaders: ['Content-Type', 'Authorization'], // specify allowed headers
+  credentials: true, // allow cookies to be sent across origins (important for authentication)
+};
+
+// Apply CORS with the configured options
+app.use(cors(corsOptions));
+
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors());
-
-
 
 app.use("/auth", authroutes);
 app.use("/profile", profileroutes);
@@ -25,4 +33,4 @@ app.use("/appointment", appointmentroutes);
 app.use("/patient", patientroutes);
 app.use("/", Filterroutes);
 
-export default app; 
+export default app;
