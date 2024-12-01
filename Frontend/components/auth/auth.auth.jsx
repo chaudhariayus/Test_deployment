@@ -2,7 +2,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { signUpSchema } from "./AuthSchema.js";
+import { signUpSchema,loginSchema } from "./AuthSchema.js";
 import { z } from "zod";
 
 export function Auth({ type }) {
